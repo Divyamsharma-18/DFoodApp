@@ -45,7 +45,7 @@ const Header = () => {
             </ul>
 
             {/* Mobile Menu */}
-            <div className='flex justify-center items-center lg:hidden' onClick={toggleMenu}>
+            <div className='flex justify-center items-center lg:hidden z-50' onClick={toggleMenu}>
                 {isMenuOpen ? (
                     <i className="fas fa-times fa-xl" style={{ color: '#ffffff' }}></i>
                 ) : (
