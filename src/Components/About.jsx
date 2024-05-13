@@ -14,7 +14,7 @@ const About = () => {
   }, [])
   return (
     <>
-      <section id='about' className='flex flex-col lg:flex-row justify-center items-center gap-10 lg:py-24 py-20 px-10 lg:px-20 bg-sky-950 w-full h-fit '>
+      <section id='about' className='flex flex-col lg:flex-row justify-center gap-10 lg:py-24 py-20 px-10 lg:px-20 bg-sky-950 w-full h-fit '>
         <div id='left' className='lg:w-1/2 w-full flex flex-col justify-end lg:items-start gap-10'>
           <h1 data-aos="zoom-in" className='text-white text-6xl font-bold'>About 
           <span className='italic text-green-500'>Us</span></h1>
