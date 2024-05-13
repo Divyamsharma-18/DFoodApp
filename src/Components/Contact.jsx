@@ -1,49 +1,56 @@
-import React, { useEffect } from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+// Reusable component for contact method
+const ContactMethod = ({ icon, title, description, contact, delay }) => {
+  return (
+    <div data-aos="slide-up" data-aos-delay={delay} className='flex flex-col justify-center items-center gap-4'>
+      <div className='contact-icon bg-green-500 px-6 py-6 rounded-full hover:bg-orange-500 cursor-pointer text-center'>
+        <i className={`${icon} fa-xl`}></i>
+      </div>
+      <h1 className='text-white font-bold text-2xl'>{title}</h1>
+      <p className='text-white font-normal text-xl text-center'>{description}</p>
+      <p className='text-orange-500 text-2xl font-bold text-center underline cursor-pointer'>{contact}</p>
+    </div>
+  );
+};
 
 const Contact = () => {
-    useEffect(() => {
-        AOS.init({
-          offset: 200,
-          duration: 800,
-          easing: "ease-in-sine",
-          delay: 100,
-        })
-      }, [])
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+  }, []);
+
   return (
     <section id='contact' className='bg-slate-950 w-full px-20 py-20 flex flex-col lg:flex-row justify-around items-center gap-16'>
-        <div data-aos="slide-up" data-aos-delay="500" className='flex flex-col justify-center items-center gap-4'>
-            <div id='iconBox' className='bg-green-500 px-6
-            py-6 rounded-full hover:bg-orange-500 cursor-pointer text-center'>
-            <i class="fa-solid fa-phone fa-xl"></i>
-            </div>
-            <h1 className='text-white font-bold text-2xl'>Call Us</h1>
-            <p className='text-white font-normal text-xl text-center'>24*7 at your service.</p>
-            <p className='text-orange-500  text-2xl font-bold text-center underline cursor-pointer'>+91 987 654 3210</p>
-        </div>
-
-        <div data-aos="slide-up" data-aos-delay="600" className='flex flex-col justify-center items-center gap-4'>
-            <div id='iconBox' className='bg-green-500 px-6
-            py-6 rounded-full hover:bg-orange-500 cursor-pointer text-center'>
-            <i class="fa-solid fa-location-dot fa-xl"></i>
-            </div>
-            <h1 className='text-white font-bold text-2xl'>Reach Us</h1>
-            <p className='text-white font-normal text-xl text-center'>Visit our location.</p>
-            <p className='text-orange-500  text-2xl font-bold text-center underline cursor-pointer'>18, DCodeStreet, India.</p>
-        </div>
-
-        <div data-aos="slide-up" data-aos-delay="700" className='flex flex-col justify-center items-center gap-4'>
-            <div id='iconBox' className='bg-green-500 px-6
-            py-6 rounded-full hover:bg-orange-500 cursor-pointer text-center'>
-            <i class="fa-regular fa-envelope fa-xl"></i>
-            </div>
-            <h1 className='text-white font-bold text-2xl'>Mail Us</h1>
-            <p className='text-white font-normal text-xl text-center'>Send mails to us.</p>
-            <p className='text-orange-500  text-2xl font-bold text-center underline cursor-pointer'>DFoodApp@gmail.com</p>
-        </div>
+      <ContactMethod
+        icon="fa-solid fa-phone"
+        title="Call Us"
+        description="24*7 at your service."
+        contact="+91 987 654 3210"
+        delay="500"
+      />
+      <ContactMethod
+        icon="fa-solid fa-location-dot"
+        title="Reach Us"
+        description="Visit our location."
+        contact="18, DCodeStreet, India."
+        delay="600"
+      />
+      <ContactMethod
+        icon="fa-regular fa-envelope"
+        title="Mail Us"
+        description="Send mails to us."
+        contact="DFoodApp@gmail.com"
+        delay="700"
+      />
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
