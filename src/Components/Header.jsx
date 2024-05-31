@@ -23,7 +23,7 @@ const Header = () => {
     ];
 
     return (
-        <nav className='flex justify-between items-center gap-4 bg-slate-800 lg:px-10 py-6 sticky top-0 z-30'>
+        <nav className=''>
             <div id='Logo' className='flex flex-row justify-center items-center'>
                 <img src={Logo} height={60} width={60} alt='DFoodApp Logo' />
                 <h1 className='text-orange-500 lg:text-4xl text-2xl font-bold'>DFoodApp</h1>
