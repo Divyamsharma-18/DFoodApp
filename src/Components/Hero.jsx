@@ -15,12 +15,14 @@ const Hero = () => {
   return (
     <section id='home' className='w-full bg-black flex justify-between items-center text-white px-10 py-20 bg-cover bg-center' style={{ backgroundImage: `url('${bgImg}')` }}>
       <div className='flex justify-center flex-col items-center lg:items-start gap-8 w-full lg:w-2/3 pl-10 pr-2 lg:pl-32 lg:pr-10'>
-        <div data-aos="slide-right" id='box-circle' className='bg-green-500 p-12 rounded-full flex justify-center items-center flex-col gap-4 w-60 mt-6'>
+        <div data-aos="slide-right" id='box-circle' className='bg-green-500 p-12 rounded-full flex justify-center items-center flex-col gap-4 w-60 mt-4'>
           <h1 className='text-black font-bold text-5xl text-center'>40% FLAT OFF</h1>
         </div>
         <h1 data-aos="zoom-in-up" className='text-3xl font-semibold'>DFoodApp</h1>
+        <div data-aos="zoom-in" className='flex flex-col md:items-start items-center'>
         <h1 data-aos="zoom-in" className='text-center text-5xl lg:text-6xl font-bold lg:text-start'>Appetite Adventures: <br /> Explore, Eat, Enjoy!</h1>
-        <button data-aos="zoom-in-up" className='bg-orange-500 px-8 py-4 rounded-full hover:bggre500 hover:text-black font-bold mt-3'>READ MORE</button>
+        <button className='bg-orange-500 w-36 py-3.5 rounded-full hover:bggre500 hover:text-black font-bold mt-8'>READ MORE</button>
+        </div>
       </div>
     </section>
   )

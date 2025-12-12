@@ -5,15 +5,12 @@ import { Link } from 'react-scroll';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
     const closeMenu = () => {
         setIsMenuOpen(false);
     };
-
     const navItems = () => [
         { link: 'Home', path: 'home' },
         { link: 'About', path: 'about' },
@@ -21,7 +18,6 @@ const Header = () => {
         { link: 'Gallery', path: 'gallery' },
         { link: 'Contact', path: 'contact' },
     ];
-
     return (
         <nav className='flex justify-between items-center gap-4 bg-slate-800 lg:px-10 py-6 sticky top-0 z-30'>
             <div id='Logo' className='flex flex-row justify-center items-center'>
@@ -43,9 +39,8 @@ const Header = () => {
                     </li>
                 ))}
             </ul>
-
             {/* Mobile Menu */}
-            <div className='flex justify-center items-center lg:hidden z-50' onClick={toggleMenu}>
+            <div className='flex !mr-5 justify-center items-center lg:hidden z-50' onClick={toggleMenu}>
                 {isMenuOpen ? (
                     <i className="fas fa-times fa-xl" style={{ color: '#ffffff' }}></i>
                 ) : (

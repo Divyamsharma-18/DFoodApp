@@ -11,35 +11,44 @@ import 'aos/dist/aos.css'
 const Menu = () => {
   useEffect(() => {
     AOS.init({
-      offset: 200,
+      offset: 100,
       duration: 800,
-      easing: "ease-in-sine",
+      easing: "zoom-up",
       delay: 100,
     })
   }, [])
+
+  const galleryItems = [
+    { id: 1, text: "Wraps for you!", img: menu1, isBright: true },
+    { id: 2, text: "Sea Food", img: menu2, isBright: true },
+    { id: 3, text: "Lean range Meals", img: menu3, isBright: true },
+    { id: 4, text: "Vegan Food Platters", img: item1, isBright: false },
+    { id: 5, text: "Aglio Olio with Shrimp", img: item2, isBright: false },
+    { id: 6, text: "Green Nonveg Bowls.", img: item3, isBright: false },
+  ];
+
   return (
-    <>
-    <section id='gallery' className='w-full bg-slate-950 h-fit px-20 flex py-28 flex-col lg:flex-row justify-center items-center gap-16 lg:flex-wrap'>
-      <div data-aos="slide-up" data-aos-delay="150" className='flex justify-center items-center bg-center bg-cover lg:h-80 lg:w-80 h-60 w-60 rounded-xl brightness-150' style={{ backgroundImage: `url('${menu1}')` }}>
-        <h1 className='text-white font-bold text-3xl text-center'>Wraps for you!</h1>
-      </div>
-      <div data-aos="slide-up" data-aos-delay="150" className='flex justify-center items-center bg-center bg-cover lg:h-80 lg:w-80 h-60 w-60  rounded-xl brightness-150' style={{ backgroundImage: `url('${menu2}')` }}>
-        <h1 className='text-white font-bold text-3xl text-center'>Sea Food</h1>
-      </div>
-      <div data-aos="slide-up" data-aos-delay="150" className='flex justify-center items-center bg-center bg-cover lg:h-80 lg:w-80 h-60 w-60  rounded-xl brightness-150' style={{ backgroundImage: `url('${menu3}')` }}>
-        <h1 className='text-white text-center font-bold text-3xl'>Lean range Meals</h1>
-      </div>
-      <div data-aos="slide-up" data-aos-delay="150" className='flex justify-center items-center bg-center bg-cover lg:h-80 lg:w-80 h-60 w-60 rounded-xl' style={{ backgroundImage: `url('${item1}')` }}>
-        <h1 className='text-white font-bold text-center text-3xl'>Vegan Food Platters</h1>
-      </div>
-      <div data-aos="slide-up" data-aos-delay="150" className='flex justify-center items-center bg-center bg-cover lg:h-80 lg:w-80 h-60 w-60 rounded-xl' style={{ backgroundImage: `url('${item2}')` }}>
-        <h1 className='text-white font-bold text-3xl text-center'>Aglio Olio with Shrimp</h1>
-      </div>
-      <div data-aos="slide-up" data-aos-delay="150" className='flex justify-center items-center bg-center bg-cover lg:h-80 lg:w-80 h-60 w-60 rounded-xl' style={{ backgroundImage: `url('${item3}')` }}>
-        <h1 className='text-white font-bold text-3xl text-center'>Green Nonveg Bowls.</h1>
+    <section id='gallery' className='w-full bg-slate-950 py-28 px-5'>
+      <div className='flex flex-wrap justify-center gap-16 max-w-6xl mx-auto'>
+        {galleryItems.map((item) => (
+          <div 
+            key={item.id}
+            data-aos="slide-up" 
+            data-aos-delay="150" 
+            className={`
+              flex justify-center items-center bg-center bg-cover 
+              lg:h-80 lg:w-80 h-60 w-60 rounded-xl 
+              ${item.isBright ? 'brightness-150' : ''} 
+            `}
+            style={{ backgroundImage: `url('${item.img}')` }}
+          >
+            <h1 className='text-white font-bold text-3xl text-center px-4'>
+              {item.text}
+            </h1>
+          </div>
+        ))}
       </div>
     </section>
-    </>
   )
 }
 

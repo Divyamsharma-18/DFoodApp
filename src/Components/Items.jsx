@@ -15,48 +15,55 @@ const Items = () => {
       delay: 100,
     })
   }, [])
+
+  const dishItems = [
+    { 
+      img: dish1, 
+      title: "Burger for you!", 
+      desc: "A savory delight, the burger melds seasoned meat and artisanal bread with gourmet toppings." 
+    },
+    { 
+      img: dish2, 
+      title: "Burger and Fries!", 
+      desc: "Indulged in burger bliss: savory patty nestled in a fluffy bun. Accompanied by crispy, golden fries." 
+    },
+    { 
+      img: dish3, 
+      title: "Irresistible Ravioli!", 
+      desc: "Savour the flavour of our mouthwatering ravioli paired with delicious sauces. Taste perfection in every bite!" 
+    },
+    { 
+      img: dish4, 
+      title: "Biryani for all!", 
+      desc: "Embark on a flavour journey with our biryani: rich, aromatic, irresistible, where spices weaves tales." 
+    },
+  ];
   return (
-    <section id="menu" className='w-full h-fit bg-slate-950 px-12 lg:px-20 lg:py-24 py-20 flex flex-col justify-center items-center gap-10'>
-      <h1 data-aos="zoom-in" className='text-white font-bold text-6xl text-center'>View Our Lip-smacking<span className='text-green-500 italic'> Delicacies</span></h1>
-      <p data-aos="slide-up" className='text-white font-semibold text-2xl text-center'>
-        "DFoodAPP: Where Every Bite is a Celebration!"
-      </p>
-      <div id='grids' className='flex flex-col lg:flex-row justify-center items-center flex-wrap gap-10'>
-        <div data-aos="slide-up" data-aos-delay="200" className='flex flex-col justify-center items-center gap-4 bg-slate-900 pb-10 lg:w-2/5 w-full rounded-2xl'>
-          <img src={dish1} alt="Dish image" />
-          <div className='w-full flex flex-col justify-center items-center gap-4 px-10'>
-            <h1 className='text-white font-bold text-2xl mt-4 text-center'>Burger for you!</h1>
-            <p className='text-white font-semibold text-lg text-center'>"A savory delight, the burger melds seasoned meat and artisanal bread with gourmet toppings for a symphony of flavours in every bite."</p>
-            <button className='bg-green-500 px-8 py-4 rounded-full hover:bg-orange-500 text-white hover:text-black font-bold mt-2'>Order Now</button>
-          </div>
-        </div>
-        <div data-aos="slide-up" data-aos-delay="200" className='flex flex-col justify-center items-center gap-4 bg-slate-900 pb-10 lg:w-2/5 w-full rounded-2xl'>
-          <img src={dish2} alt="Dish image" />
-          <div className='w-full flex flex-col justify-center items-center gap-4 px-10'>
-            <h1 className='text-white font-bold text-2xl mt-4 text-center'>Burger and Fries to the rescue!</h1>
-            <p className='text-white font-semibold text-lg text-center'>"Indulged in burger bliss: savory patty nestled in a fluffy bun. Accompanied by crispy, golden fries. Satisfaction, served."</p>
-            <button className='bg-green-500 px-8 py-4 rounded-full hover:bg-orange-500 text-white hover:text-black font-bold mt-2'>Order Now</button>
-          </div>
-        </div>
-        <div data-aos="slide-up" data-aos-delay="200" className='flex flex-col justify-center items-center gap-4 bg-slate-900 pb-10 lg:w-2/5 w-full rounded-2xl'>
-          <img src={dish3} alt="Dish image" />
-          <div className='w-full flex flex-col justify-center items-center gap-4 px-10'>
-            <h1 className='text-white font-bold text-2xl mt-4 text-center'>Irresistible Ravioli: One fine meal!</h1>
-            <p className='text-white font-semibold text-lg text-center'>"Savour the flavour of our mouthwatering ravioli paired with delicious sauces. Taste perfection in every bite!"</p>
-            <button className='bg-green-500 px-8 py-4 rounded-full hover:bg-orange-500 text-white hover:text-black font-bold mt-2'>Order Now</button>
-          </div>
-        </div>
-        <div data-aos="slide-up" data-aos-delay="200" className='flex flex-col justify-center items-center gap-4 bg-slate-900 pb-10 lg:w-2/5 w-full rounded-2xl'>
-          <img src={dish4} height={450} width={450} alt="Dish image" />
-          <div className='w-full flex flex-col justify-center items-center gap-4 px-10'>
-            <h1 className='text-white font-bold text-2xl mt-4 text-center'>Biryani for all!</h1>
-            <p className='text-white font-semibold text-lg text-center'>Embark on a flavour journey with our biryani: rich, aromatic, irresistible, where spices weaves tales and rice whispers flavours.</p>
-            <button className='bg-green-500 px-8 py-4 rounded-full hover:bg-orange-500 text-white hover:text-black font-bold mt-2'>Order Now</button>
-          </div>
-        </div>
+    <section id="menu" className='w-full bg-slate-950 px-12 lg:px-20 lg:py-24 py-20 flex flex-col justify-center items-center gap-10'>
+      <h1 data-aos="zoom-in" className='text-white font-bold text-6xl text-center'>
+        View Our Lip-smacking<span className='text-green-500 italic'> Delicacies</span></h1>
+      <p data-aos="zoom-up" className='text-white font-semibold text-2xl text-center'>"DFoodAPP: Where Every Bite is a Celebration!"</p>
+      <div id='grids' className='grid grid-cols-1 lg:grid-cols-2 gap-10 justify-items-center w-full max-w-6xl'>
+        {dishItems.map((item, index) => (
+          <div 
+            key={index}
+            data-aos="slide-up" 
+            data-aos-delay="200" 
+            className='bg-slate-900 w-full max-w-[500px] h-[700px] rounded-2xl overflow-hidden shadow-lg flex flex-col' >
+            <img 
+              src={item.img} 
+              alt={item.title} 
+              className='w-full h-[400px] object-center' />
+            <div className='flex flex-col justify-between items-center p-6 flex-grow'>
+              <h1 className='text-white font-bold text-2xl text-center'>{item.title}</h1>
+              <p className='text-white font-semibold text-lg text-center line-clamp-3'>
+                {item.desc}</p>
+              <button className='bg-green-500 px-8 py-3 rounded-full hover:bg-orange-500 text-white hover:text-black font-bold transition-all duration-300'>
+                Order Now</button>
+            </div></div>
+        ))}
       </div>
     </section>
   )
 }
-
 export default Items

@@ -20,8 +20,8 @@ const Banner = () => {
         </div>
         <h1 data-aos="slide-up" data-aos-delay="300" className='lg:text-6xl text-5xl font-semibold '>Keep yourself updated with all these irresistible offers.</h1>
         <p data-aos="slide-up" data-aos-delay="400" className='text-xl lg:text-2xl font-semibold'>Craving delicious food? Look no further! One stop for all your cravings is DFoodApp. It's offering on exclusive deal just for you. Order now and enjoy mouthwatering meals delivered straight to your door. Don't miss out - subacribe to our newsletter today.</p>
-        <div data-aos="slide-right" data-aos-delay="600" id='form' className='flex flex-col lg:flex-row justify-start items-start w-full gap-6 mt-3'>
-            <input type="email" className='p-4 text-black font-bold w-full lg:w-1/2 rounded-full' placeholder='Enter Email'/>
+        <div data-aos="slide-right" data-aos-delay="200" id='form' className='flex flex-col lg:flex-row justify-start items-start w-full gap-6 mt-3'>
+            <input type="email" className='py-4 px-6 text-black font-bold w-full lg:w-1/2 rounded-full' placeholder='Enter Email'/>
             <button type="submit" className='bg-green-500 hover:bg-orange-500 px-10 py-4 rounded-full text-black font-bold'>Subscribe</button>
         </div>
         </div>
